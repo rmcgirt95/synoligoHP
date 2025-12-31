@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Shop</title>
+        <link rel="stylesheet" href="shop.css">
+
+  <!-- Optional: Work Sans (close to your original) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-wrap">
+
+    <!-- Alert -->
+    <div class="alert-bar">
+      <div class="alert-inner">
+        <div class="alert-left">
+          <img alt="Alert" src="alert.webp" />
+          <div class="alert-label">Special Alert:</div>
+        </div>
+
+        <div class="alert-text">
+          <span class="alert-banner-title">GET 50% OFF YOUR FIRST ORDER!</span>
+          Experience the quality of SynOptuma™ oligos at half the cost.
+          <a class="alert-banner-button-green" href="/products/dual-labeled-probes?tab=ordering" target="_blank" rel="noreferrer">SAVE NOW!</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top header mask -->
+    <header class="top-header" role="banner">
+      <div class="top-header-inner">
+        <span class="top-tagline">Unleash the Power of Oligo Customization</span>
+
+        <nav class="top-nav" aria-label="Top actions">
+          <div class="header-btn" role="button" tabindex="0">
+            <!-- lock icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 20" aria-hidden="true">
+              <path fill="currentColor" d="M12.88 6.733V4.72c0-2.521-2.031-4.572-4.53-4.572h-.596c-2.498 0-4.53 2.05-4.53 4.572v2.013A4.06 4.06 0 0 0 0 10.71v4.878c0 2.239 1.804 4.06 4.023 4.06h8.058c2.22 0 4.023-1.821 4.023-4.06v-4.878a4.06 4.06 0 0 0-3.223-3.978M4.824 4.72c0-1.631 1.315-2.958 2.931-2.958h.596c1.616 0 2.932 1.327 2.932 2.958v1.932h-6.46zm9.68 10.87c0 1.348-1.087 2.445-2.423 2.445H4.022c-1.337 0-2.424-1.097-2.424-2.446v-4.878c0-1.348 1.087-2.446 2.424-2.446h8.058c1.336 0 2.424 1.098 2.424 2.446z"></path>
+              <path fill="currentColor" d="M8.052 10.718c-.442 0-.8.361-.8.806v1.626c0 .445.358.807.8.807.44 0 .8-.362.8-.807v-1.626a.804.804 0 0 0-.8-.806"></path>
+            </svg>
+            <span>Sign In</span>
+          </div>
+
+          <div class="header-btn" role="button" tabindex="0">
+            <!-- user icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 19" aria-hidden="true">
+              <path fill="currentColor" d="M17.974 16.28c-.377-2.57-1.589-4.524-3.506-5.65a.774.774 0 0 0-1.072.301.823.823 0 0 0 .293 1.104c1.505.885 2.424 2.395 2.732 4.488a.74.74 0 0 1-.168.585.75.75 0 0 1-.577.274H2.326a.75.75 0 0 1-.627-.34.75.75 0 0 1-.086-.674c.449-1.236 2.3-5.27 7.264-5.27 2.97 0 5.387-2.488 5.387-5.549C14.264 2.49 11.848 0 8.877 0S3.49 2.489 3.49 5.55c0 .975.25 1.935.722 2.776a.773.773 0 0 0 1.073.296.82.82 0 0 0 .287-1.106 4 4 0 0 1-.51-1.966c0-2.167 1.711-3.93 3.816-3.93s3.816 1.763 3.816 3.93-1.711 3.932-3.816 3.932c-5.975 0-8.196 4.837-8.735 6.32a2.41 2.41 0 0 0 .267 2.163A2.31 2.31 0 0 0 2.327 19h13.35c.68 0 1.325-.305 1.769-.836a2.4 2.4 0 0 0 .528-1.882z"></path>
+            </svg>
+            <span>Register</span>
+          </div>
+
+          <div class="header-btn" role="button" tabindex="0">
+            <!-- cart icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 22" aria-hidden="true">
+              <path fill="currentColor" d="M22.982 1.202a.797.797 0 0 0-1-.535l-1.425.443c-.128.04-.296.095-.47.169a6.76 6.76 0 0 0-2.935 2.362 8.5 8.5 0 0 0-1.36 3.21l-.987 4.995H3.495a.89.89 0 0 1-.867-.72l-1.01-5.109a.9.9 0 0 1 .184-.745.88.88 0 0 1 .686-.329h11.724c.441 0 .8-.362.8-.808a.805.805 0 0 0-.8-.81H2.487c-.748 0-1.449.336-1.923.921a2.52 2.52 0 0 0-.515 2.087l1.01 5.109a2.5 2.5 0 0 0 2.436 2.02h11.041a2.58 2.58 0 0 1-2.443 1.791H2.827c-.442 0-.8.363-.8.809 0 .415.31.757.708.803a2.52 2.52 0 0 0-.708 1.753c0 1.386 1.114 2.513 2.484 2.513s2.484-1.127 2.484-2.513c0-.679-.27-1.295-.702-1.746h4.86a2.52 2.52 0 0 0-.701 1.746c0 1.386 1.114 2.513 2.484 2.513s2.483-1.127 2.483-2.513c0-.98-.558-1.827-1.37-2.242a4.22 4.22 0 0 0 2.21-3.63l1.104-5.58a6.9 6.9 0 0 1 1.099-2.596 5.15 5.15 0 0 1 2.24-1.8c.087-.036.186-.07.324-.114l1.424-.443a.81.81 0 0 0 .53-1.011z"></path>
+              <path fill="currentColor" d="M4.138 6.652v3.536c0 .447.358.81.8.81.44 0 .799-.363.799-.81V6.653a.805.805 0 0 0-.8-.809c-.44 0-.8.363-.8.81M7.906 6.652v3.536c0 .447.359.81.8.81s.8-.363.8-.81V6.653a.805.805 0 0 0-.8-.809c-.441 0-.8.363-.8.81M11.667 6.652v3.536c0 .447.358.81.8.81.44 0 .8-.363.8-.81V6.653a.805.805 0 0 0-.8-.809c-.442 0-.8.363-.8.81"></path>
+            </svg>
+            <span>My Cart <sup>(1)</sup></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Logo + primary nav -->
+      <div class="main-header-row">
+        <div class="main-header-inner">
+          <a class="logo-link" href="/">
+            <img alt="Logo" src="logo.webp" />
+          </a>
+
+          <nav class="main-nav" aria-label="Primary">
+            <div class="nav-item" role="button" tabindex="0">
+              <img alt="" src="/_next/static/media/arrow.d6919799.svg" />
+              <span class="nav-label">Products</span>
+            </div>
+            <div class="nav-item" role="button" tabindex="0">
+              <img alt="" src="/_next/static/media/arrow.d6919799.svg" />
+              <span class="nav-label">Services</span>
+            </div>
+            <div class="nav-item" role="button" tabindex="0">
+              <img alt="" src="/_next/static/media/arrow.d6919799.svg" />
+              <span class="nav-label">Resources</span>
+            </div>
+          </nav>
+
+          <button class="burger" id="openMenu" aria-label="Open menu" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" aria-hidden="true">
+              <g fill="#449FDE">
+                <path d="M1.84 11.701h20.32c1.016 0 1.84-.83 1.84-1.852a1.846 1.846 0 0 0-1.84-1.853H1.84C.823 7.996 0 8.826 0 9.85 0 10.87.824 11.7 1.84 11.7"></path>
+                <path d="M1.84 3.705h9.488c1.016 0 1.84-.83 1.84-1.853A1.846 1.846 0 0 0 11.328 0H1.84C.824 0 0 .83 0 1.852s.824 1.852 1.84 1.852"></path>
+                <path d="M22.16 16.296H1.84c-1.016 0-1.84.829-1.84 1.852S.824 20 1.84 20h20.32c1.016 0 1.84-.83 1.84-1.852a1.846 1.846 0 0 0-1.84-1.852"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <section class="hero">
+        <h1>Order Here.</h1>
+        <p>Synoligo is on a mission to deliver oligos to you, fast! Create an account and start ordering today!</p>
+
+        <div class="hero-bar"><div></div></div>
+
+        <div class="cards">
+          <div class="card" role="button" tabindex="0">
+            <img alt="Dual-Labeled Probes" src="homeProbes.d58ea4f9.svg" style="max-width:120px;">
+            <h3>Dual-Labeled<br>Probes</h3>
+            <p>Access over 100 combinations of reporter dyes, quenchers, and scales for your diagnostic applications.</p>
+            <button class="btn" type="button">50% Off Your First Order</button>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <img alt="Custom Oligos" src="customOligos.e839167e.svg" style="max-width:120px;">
+            <h3>Custom<br>Oligos</h3>
+            <p>Choose from a wide range of modifications for your diagnostic or therapeutic oligos.</p>
+            <button class="btn" type="button">ORDER NOW</button>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <img alt="Input for Tubes" src="InputTubes.4fe29481.svg" style="max-width:120px;">
+            <h3>Input for<br>Tubes</h3>
+            <p>Use our bulk order template for orders with more than 10 sequences.</p>
+            <button class="btn" type="button">ORDER NOW</button>
+          </div>
+
+          <div class="card" role="button" tabindex="0">
+            <img alt="Input for Plates" src="inputPlates.45741b4e.svg" style="max-width:120px;">
+            <h3>Input for<br>Plates</h3>
+            <p>Save time by uploading your plate order using our template.</p>
+            <button class="btn" type="button">ORDER NOW</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONSULT -->
+      <section class="consult" id="consult">
+        <img alt="Consult Icon" src="homeLightIcon.252207b1.svg" style="max-width:127px;">
+        <h2>Consult a Scientist</h2>
+        <p>
+          <span>Need a custom solution?</span><br>
+          <span>Book a meeting to speak with one of our scientists.</span>
+        </p>
+        <button class="btn" type="button">SCHEDULE NOW</button>
+      </section>
+
+      <!-- RESOURCES -->
+      <section class="resources" id="resources">
+        <div class="resources-inner">
+          <h2>Our Resources</h2>
+          <div class="resources-divider">
+            <img alt="Section Divider" src="/_next/static/media/greenBar.7b5e1fc4.svg" style="width:81px;">
+          </div>
+
+          <div class="resource-grid">
+            <div class="bubble" role="button" tabindex="0">
+              <div class="content">
+                <img alt="Synoligo Blog" src="/_next/static/media/blog.f7db43e1.svg" style="width:80px;height:70px;object-fit:contain;">
+                <h3>Synoligo Blog</h3>
+                <p>Explore the latest articles on specialty modifications and industry trends.</p>
+              </div>
+              <img class="bg" alt="Bubble Background" src="/_next/static/media/ressourcesCircle.d4868c07.svg">
+            </div>
+
+            <div class="bubble" role="button" tabindex="0">
+              <div class="content">
+                <img alt="Search & Replace" src="/_next/static/media/searchReplace.04e11d58.svg" style="width:80px;height:70px;object-fit:contain;">
+                <h3>Search &amp; Replace</h3>
+                <p>Ensure your modification names match our internal conventions before submitting an order.</p>
+              </div>
+              <img class="bg" alt="Bubble Background" src="/_next/static/media/ressourcesCircle.d4868c07.svg">
+            </div>
+
+            <div class="bubble" role="button" tabindex="0">
+              <div class="content">
+                <img alt="Oligo Mod List" src="/_next/static/media/modList.b924a4c1.svg" style="width:80px;height:70px;object-fit:contain;">
+                <h3>Oligo Mod List</h3>
+                <p>Browse 600+ modifications with detailed chemical structures and molecular weights.</p>
+              </div>
+              <img class="bg" alt="Bubble Background" src="/_next/static/media/ressourcesCircle.d4868c07.svg">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="newsletter" id="newsletter">
+        <div class="newsletter-inner">
+          <div class="newsletter-card" role="button" tabindex="0">
+            <div style="display:flex;align-items:center;gap:23px;">
+              <img alt="Newsletter Icon" src="/_next/static/media/newsletterIcon.554b6b53.svg" style="width:80px;height:80px;object-fit:contain;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:15px;">
+              <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
+              <img alt="Blue Bar" src="/_next/static/media/blueBar.55dba756.svg" style="width:41px;height:auto;">
+              <p class="newsletter-desc">Stay informed on new developments and the latest Synoligo offerings.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="footer-mask" aria-hidden="true">
+          <img alt="Mask" src="/_next/static/media/mask.bbc81700.svg">
+        </div>
+
+        <div class="footer-inner">
+          <div class="footer-top">
+            <img alt="Synoligo Logo" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.5c2052f4.png&w=3840&q=75" style="max-width:237px;cursor:pointer;">
+
+            <div class="footer-cols">
+              <div class="footer-col">
+                <h4>Explore</h4>
+                <img alt="green bar" src="/_next/static/media/greenBar.7b5e1fc4.svg" style="width:50px;">
+                <div class="footer-links">
+                  <span>About Us</span>
+                  <span>Technology</span>
+                  <span>News &amp; Events</span>
+                  <span>FAQs</span>
+                  <span>Cookie Policy</span>
+                  <span>Privacy Policy</span>
+                  <span>Terms &amp; Conditions</span>
+                </div>
+              </div>
+
+              <div class="footer-col">
+                <h4>Oligo Shop</h4>
+                <img alt="green bar" src="/_next/static/media/greenBar.7b5e1fc4.svg" style="width:50px;">
+                <div class="footer-links">
+                  <span>Shopping Cart</span>
+                  <span>Products</span>
+                  <span>Services</span>
+                  <span>Resources</span>
+                </div>
+              </div>
+
+              <div class="footer-col">
+                <h4>Contact Us</h4>
+                <img alt="green bar" src="/_next/static/media/greenBar.7b5e1fc4.svg" style="width:50px;">
+                <div class="footer-links" style="gap:10px;">
+                  <div style="line-height:1.2;">
+                    <span style="cursor:default;text-decoration:none;">101 Southcenter Court</span>
+                    <span style="cursor:default;text-decoration:none;">Suite 800</span>
+                    <span style="cursor:default;text-decoration:none;">Morrisville, NC 27560 USA</span>
+                  </div>
+                  <span style="cursor:default;text-decoration:none;">+1 919 650 1014</span>
+                  <span style="cursor:default;text-decoration:none;">info@synoligo.com</span>
+                  <button class="btn" type="button" style="max-width:185px;">Consult a Scientist</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-divider"></div>
+          <div class="footer-copy">Copyright © 2025 Synoligo Biotechnologies, Inc. - All rights reserved.</div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.7 14.7a1 1 0 0 1 0-1.4l4.6-4.6a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 1 1-1.4 1.4L12 10.41l-3.9 3.89a1 1 0 0 1-1.4 0Z" fill="currentColor"></path>
+      </svg>
+      <span>Back to top</span>
+    </button>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+      <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <div class="drawer-top">
+          <img alt="Logo" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FhiddenMenuLogo.bf4cbd55.webp&w=256&q=75" style="width:72px;height:auto;">
+          <button class="drawer-close" id="closeMenu" type="button" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="23" aria-hidden="true">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="drawer-actions">
+          <div class="act">Sign In</div>
+          <div class="act">Register</div>
+          <div class="act">My Cart <span style="color:#abf9a7;font-weight:700;">(1)</span></div>
+        </div>
+
+        <nav class="drawer-nav" aria-label="Mobile primary">
+          <div class="drawer-item">
+            <img alt="" src="/_next/static/media/arrow.d6919799.svg" style="width:11px;height:11px;">
+            <p>Products</p>
+          </div>
+          <div class="drawer-item">
+            <img alt="" src="/_next/static/media/arrow.d6919799.svg" style="width:11px;height:11px;">
+            <p>Services</p>
+          </div>
+          <div class="drawer-item">
+            <img alt="" src="/_next/static/media/arrow.d6919799.svg" style="width:11px;height:11px;">
+            <p>Resources</p>
+          </div>
+
+          <div style="margin-top:20px;">
+            <button class="btn" type="button" style="font-size:12px;">Consult a scientist</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    const onScroll = () => {
+      if (window.scrollY > 500) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Mobile drawer
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    const openDrawer = () => {
+      mobileOverlay.classList.add('open');
+      mobileOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeDrawer = () => {
+      mobileOverlay.classList.remove('open');
+      mobileOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    if (openMenu) openMenu.addEventListener('click', openDrawer);
+    if (closeMenu) closeMenu.addEventListener('click', closeDrawer);
+
+    // click outside drawer closes
+    mobileOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileOverlay) closeDrawer();
+    });
+
+    // ESC closes
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileOverlay.classList.contains('open')) closeDrawer();
+    });
+  </script>
+</body>
+</html>

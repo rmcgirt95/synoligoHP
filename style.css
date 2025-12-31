@@ -843,3 +843,44 @@ body{
   color: #6b7c8e;
   font-size: 15px;
 }
+/* =========================
+   Navbar dropdown on hover (desktop)
+   ========================= */
+
+@media (min-width: 992px){
+  /* Ensure dropdown is positioned correctly */
+  #bootscore-navbar .dropdown{
+    position: relative;
+  }
+
+  /* Make dropdown appear on hover */
+  #bootscore-navbar .dropdown:hover > .dropdown-menu{
+    display: block;
+    margin-top: 0; /* prevents jump */
+  }
+
+  /* Keep it open if you hover the menu itself */
+  #bootscore-navbar .dropdown-menu{
+    margin-top: 0;
+  }
+}
+
+/* Make sure dropdown looks like your screenshot */
+#bootscore-navbar .dropdown-menu{
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  background: #fff;
+  min-width: 260px;
+}
+
+#bootscore-navbar .dropdown-item{
+  padding: 10px 16px;
+  color: #2b3a4a;
+}
+
+#bootscore-navbar .dropdown-item:hover{
+  background: #f3f8ff;
+  color: #1f6fb8;
+}

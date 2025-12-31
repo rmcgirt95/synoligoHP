@@ -1058,6 +1058,40 @@ USA&ZeroWidthSpace;
   
     <!-- Bootstrap JS bundle (required for navbar toggler + offcanvas) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Only do hover behavior on desktop
+  if (window.matchMedia("(min-width: 992px)").matches) {
+    document.querySelectorAll("#bootscore-navbar .menu-item-has-children.dropdown").forEach(function (li) {
+      const toggle = li.querySelector(":scope > a.nav-link, :scope > a.dropdown-item");
+      const menu = li.querySelector(":scope > .dropdown-menu");
+
+      if (!toggle || !menu) return;
+
+      // Convert the parent link into a Bootstrap dropdown toggle
+      toggle.classList.add("dropdown-toggle");
+      toggle.setAttribute("data-bs-toggle", "dropdown");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("role", "button");
+
+      // Bootstrap dropdown instance (for proper positioning & accessibility)
+      const dd = bootstrap.Dropdown.getOrCreateInstance(toggle, {
+        autoClose: true
+      });
+
+      li.addEventListener("mouseenter", function () {
+        dd.show();
+      });
+
+      li.addEventListener("mouseleave", function () {
+        dd.hide();
+      });
+    });
+  }
+
+  // Dropdown items already redirect because they are real links (href present).
+});
+</script>
+
 </body>
 </html>
