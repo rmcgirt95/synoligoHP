@@ -1,0 +1,208 @@
+/* =========================
+   Synoligo-style Header CSS
+   ========================= */
+
+#synoligo-header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+#synoligo-header .container {
+  max-width: 1200px;
+}
+
+/* ---------- Promo bar (top light green) ---------- */
+#synoligo-header .promo-bar {
+  background: #dff3c8;                 /* light green tint */
+  border-top: 2px solid #b9e59a;        /* thin borders like screenshot */
+  border-bottom: 2px solid #b9e59a;
+  font-size: 14px;
+}
+
+#synoligo-header .promo-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+#synoligo-header .promo-bar .d-flex {
+  gap: 10px;
+  color: #1a3550;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#synoligo-header .promo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid #1a3550;
+  color: #1a3550;
+  font-weight: 800;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+#synoligo-header .promo-icon::before { content: "!"; }
+
+#synoligo-header .promo-text {
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+#synoligo-header .btn.btn-promo {
+  background: #bff0a7;
+  color: #255a2e;
+  border: 1px solid #a6df8c;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: .6px;
+  white-space: nowrap;
+}
+#synoligo-header .btn.btn-promo:hover {
+  filter: brightness(.97);
+}
+
+/* ---------- Utility bar (dark blue strip) ---------- */
+#synoligo-header .utility-bar {
+  background: linear-gradient(180deg, #0b4f86 0%, #083f6f 100%);
+  color: #fff;
+  font-size: 13px;
+}
+
+#synoligo-header .utility-bar .container {
+  padding: 10px 0;
+}
+
+#synoligo-header .tagline {
+  color: rgba(255,255,255,.92);
+  font-weight: 500;
+}
+
+#synoligo-header .auth-links .auth-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+#synoligo-header .auth-links .auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Optional: little icons like screenshot */
+#synoligo-header .auth-links .auth-link:first-child::before {
+  content: "🔒";
+  font-size: 12px;
+  opacity: .9;
+}
+#synoligo-header .auth-links .auth-link:last-child::before {
+  content: "👤";
+  font-size: 12px;
+  opacity: .9;
+}
+
+/* ---------- Main header (logo + nav + CTA) ---------- */
+#synoligo-header .main-header {
+  background: #fff;
+}
+
+#synoligo-header .navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#synoligo-header .navbar-brand img.logo.xs {
+  height: 44px;
+  width: auto;
+}
+
+/* Nav links */
+#synoligo-header .navbar-nav .nav-link {
+  color: #213a54;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 2px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Small green chevron marker before each top-level link (like screenshot) */
+#synoligo-header .navbar-nav > li > .nav-link::before {
+  content: "▾";
+  color: #86c86a;
+  font-size: 12px;
+  transform: translateY(-1px);
+}
+
+/* Active “About” blue outline box (supports WP classes too) */
+#synoligo-header .navbar-nav .nav-link.active,
+#synoligo-header .navbar-nav .current-menu-item > .nav-link,
+#synoligo-header .navbar-nav .current-menu-parent > .nav-link {
+  border: 2px solid #1f6fb8;
+  background: #eaf4ff;
+  color: #1f6fb8;
+}
+
+/* ---------- Oligo Shop pill ---------- */
+#synoligo-header .btn.btn-oligo {
+  background: #bff0a7;
+  color: #255a2e;
+  border: 1px solid #a6df8c;
+  border-radius: 999px;
+  font-weight: 800;
+  padding: 10px 18px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+#synoligo-header .btn.btn-oligo::before {
+  content: "🧬"; /* simple stand-in icon */
+  font-size: 14px;
+}
+
+/* ---------- Search button ---------- */
+#synoligo-header .btn.btn-search {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 999px;
+}
+#synoligo-header .btn.btn-search:hover {
+  background: rgba(8,63,111,.08);
+}
+
+#synoligo-header .search-icon-img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 991.98px) {
+  #synoligo-header .promo-bar .d-flex {
+    white-space: normal;
+  }
+  #synoligo-header .promo-bar .container {
+    align-items: flex-start;
+  }
+}
