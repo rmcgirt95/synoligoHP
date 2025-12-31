@@ -719,7 +719,7 @@ body{
 .subcribe-tringle img{
   width: 100%;
   height: auto;
-  display: block;
+  display: none;
 }
 
 /* Typography */
