@@ -5,10 +5,24 @@
 #synoligo-header {
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    position: sticky;
+  top: 0;
+  z-index: 1050; /* higher than Bootstrap nav + offcanvas */
 }
 
 #synoligo-header .container {
   max-width: 1200px;
+}
+/* Space below sticky header */
+.site-content {
+  padding-top: 170px; /* adjust if header height changes */
+}
+
+/* Slightly smaller padding on mobile */
+@media (max-width: 991.98px) {
+  .site-content {
+    padding-top: 140px;
+  }
 }
 
 /* ---------- Promo bar (top light green) ---------- */
@@ -19,23 +33,27 @@
   font-size: 14px;
 }
 
-#synoligo-header .promo-bar .container {
-  display: flex;
+/* Promo bar layout: centered message + right-aligned button */
+#synoligo-header .promo-bar .container{
+  display: grid;
+  grid-template-columns: 1fr auto;  /* message area | button */
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 16px;
   padding: 10px 0;
 }
 
-#synoligo-header .promo-bar .d-flex {
+#synoligo-header .promo-bar .d-flex{
+  justify-self: center;            /* centers the message block */
+  justify-content: center;
+  text-align: center;
   gap: 10px;
-  color: #1a3550;
-  flex: 1;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+  /* match screenshot: no ellipsis */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
+
 
 #synoligo-header .promo-icon {
   display: inline-flex;
@@ -50,6 +68,20 @@
   line-height: 1;
   flex: 0 0 auto;
 }
+
+/* Main header: make the middle nav actually center like screenshot */
+#synoligo-header .navbar .container{
+  position: relative;
+}
+
+#synoligo-header .navbar-collapse{
+  justify-content: center;   /* centers the UL area */
+}
+
+#synoligo-header #bootscore-navbar{
+  margin: 0 auto;            /* fights the me-auto push-left */
+}
+
 #synoligo-header .promo-icon::before { content: "!"; }
 
 #synoligo-header .promo-text {
@@ -103,31 +135,36 @@
   text-decoration: underline;
 }
 
-/* Optional: little icons like screenshot */
-#synoligo-header .auth-links .auth-link:first-child::before {
-  content: "🔒";
-  font-size: 12px;
-  opacity: .9;
-}
-#synoligo-header .auth-links .auth-link:last-child::before {
-  content: "👤";
-  font-size: 12px;
-  opacity: .9;
-}
-
 /* ---------- Main header (logo + nav + CTA) ---------- */
 #synoligo-header .main-header {
   background: #fff;
 }
 
 #synoligo-header .navbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-#synoligo-header .navbar-brand img.logo.xs {
-  height: 44px;
+/* Logo scaling */
+#synoligo-header .navbar-brand img.logo {
+  max-height: 10px;   /* desktop */
   width: auto;
+  height: auto;
+  display: block;
+}
+
+/* Extra-small logo variant */
+#synoligo-header .navbar-brand img.logo.xs {
+  max-height: 28px !important;
+  height: auto !important;
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+  #synoligo-header .navbar-brand img.logo,
+  #synoligo-header .navbar-brand img.logo.xs {
+    max-height: 30px;
+  }
 }
 
 /* Nav links */
@@ -143,11 +180,14 @@
   gap: 6px;
 }
 
-/* Small green chevron marker before each top-level link (like screenshot) */
-#synoligo-header .navbar-nav > li > .nav-link::before {
-  content: "▾";
+#synoligo-header{
+  border-bottom: 2px solid #16b6d5; /* cyan line like screenshot */
+}
+/* Replace caret marker with a small green angled mark */
+#synoligo-header .navbar-nav > li > .nav-link::before{
+  content: "↘";
   color: #86c86a;
-  font-size: 12px;
+  font-size: 14px;
   transform: translateY(-1px);
 }
 
@@ -205,4 +245,601 @@
   #synoligo-header .promo-bar .container {
     align-items: flex-start;
   }
+}
+
+/* =========================
+   Page base + section styles
+   (Why Choose Us + Current Stats)
+   ========================= */
+
+:root{
+  --syn-blue-900:#083f6f;
+  --syn-blue-800:#0b4f86;
+  --syn-blue-700:#1f6fb8;
+  --syn-blue-100:#eaf4ff;
+
+  --syn-green-600:#7cc36f;
+  --syn-green-200:#dff3c8;
+  --syn-green-150:#bff0a7;
+
+  --text-900:#0f2235;
+  --text-700:#213a54;
+  --muted:#5e6f80;
+}
+
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--text-900);
+  background:#fff;
+}
+
+/* Make containers feel like the screenshot width */
+.container{
+  max-width: 1200px;
+}
+
+/* ---------- WHY SECTION (blue panel with checks + image) ---------- */
+.why-section{
+  background: #2f5f9f; /* screenshot-like blue */
+  color:#fff;
+  padding: 56px 0;
+}
+
+.why-section h2{
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 0 0 20px 0;
+}
+
+.why-section .choose-properties{
+  align-items:flex-start;
+}
+
+.why-section .right-icon{
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.22);
+  margin-top: 2px;
+}
+
+.why-section .right-icon i{
+  color: var(--syn-green-600);
+  font-size: 20px;
+}
+
+.why-section h6{
+  font-weight: 800;
+  font-size: 18px;
+  margin: 0 0 6px 0;
+}
+
+.why-section p{
+  margin: 0;
+  color: rgba(255,255,255,.9);
+  line-height: 1.45;
+}
+
+.why-section .choose-properties-title{
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  padding-bottom: 18px;
+  width: 100%;
+}
+
+.why-section .choose-properties:last-child .choose-properties-title{
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.why-section img{
+  border-radius: 6px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+}
+
+/* ---------- STAT SECTION (Current Stats + green number tiles) ---------- */
+.stat-section{
+  padding: 70px 0 40px;
+  background:#fff;
+}
+
+.stat-title{
+  font-weight: 900;
+  color: var(--syn-blue-900);
+  font-size: clamp(34px, 3vw, 56px);
+  margin: 0 0 10px;
+}
+
+.stat-section p.fw-light{
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* little blue square underline like screenshot */
+.stat-square{
+  width: 42px;
+  height: 8px;
+  background: var(--syn-blue-900);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.stats-bottom-border{
+  height: 1px;
+  background: #e3e8ee;
+  width: 100%;
+  margin: 18px 0;
+}
+
+.stat-sequence .flex-shrink-0 img{
+  width: 58px;
+  height: auto;
+}
+
+.stat-count{
+  gap: 0;
+  align-items: center;
+}
+
+.stat-count-border{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 50px;
+  height: 58px;
+  background: #6ec15d; /* green tiles */
+  color:#fff;
+  font-weight: 900;
+  font-size: 34px;
+  border-radius: 2px;
+  margin-right: 2px;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.08);
+}
+
+.stat-count-label h5{
+  font-weight: 700;
+  color: var(--text-900);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* the big “100+” style on line 2 */
+.stat-relation span.text-start{
+  font-weight: 900;
+  font-size: 54px;
+  color: var(--text-900);
+  line-height: 1;
+}
+
+.stat-relation .stat-count-label h5{
+  margin: 0;
+}
+
+/* responsive tweaks */
+@media (max-width: 991.98px){
+  .why-section{
+    padding: 44px 0;
+  }
+  .stat-section{
+    padding: 52px 0 30px;
+  }
+  .stat-count-border{
+    width: 44px;
+    height: 52px;
+    font-size: 30px;
+  }
+  .stat-relation span.text-start{
+    font-size: 46px;
+  }
+}
+
+/* =========================
+   Expertise section (match screenshot)
+   ========================= */
+
+.expertise-section{
+  padding: 70px 0;
+}
+
+/* Left text column */
+.expertise-section h2{
+  color: var(--syn-blue-900);
+  font-weight: 900;
+  font-size: clamp(42px, 3.3vw, 58px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.expertise-section p{
+  color: #5e6f80;
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 360px;
+}
+
+/* Right 3-column grid wrapper border */
+.expertise-section .col-lg-8 > .row.g-0{
+  border: 1px solid #dfe5ec;
+  border-radius: 2px;
+  overflow: hidden; /* keeps edges clean */
+  background: #fff;
+}
+
+/* Normalize all inner borders to same color */
+.expertise-section .border{
+  border-color: #dfe5ec !important;
+}
+
+/* Top text blocks */
+.expertise-section .col-md-4 > .p-4.border{
+  padding: 26px 26px !important;
+  min-height: 170px;
+  background: #fff;
+}
+
+.expertise-section h3{
+  font-weight: 900;
+  font-size: 22px;
+  margin: 0 0 10px;
+  color: #0f2235;
+}
+
+.expertise-section h3 a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.expertise-section h3 a:hover{
+  text-decoration: underline;
+}
+
+.expertise-section .col-md-4 > .p-4.border p{
+  margin: 0;
+  color: #5e6f80;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Icon row */
+.expertise-section .row.g-0 .p-4.pb-5{
+  padding: 34px 26px 44px !important;
+  background: #fff;
+}
+
+.expertise-section .row.g-0 .p-4.pb-5 img{
+  width: 120px;
+  max-width: 120px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Bottom list (blue panels) */
+.expertise-section .expertise-list .bg-primary{
+  background: #2f5f9f !important; /* screenshot-like blue */
+  color: #fff;
+  padding: 26px 26px !important;
+}
+
+.expertise-section .expertise-list a{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.expertise-section .expertise-list ul{
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.expertise-section .expertise-list li{
+  color: rgba(255,255,255,.95);
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 4px 0;
+}
+
+/* Optional: tighten the left padding you currently add with ps-3 */
+.expertise-section .ps-3{
+  padding-left: 0 !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 1199.98px){
+  .expertise-section{
+    padding: 50px 0;
+  }
+}
+/* =========================
+   HERO overlay positioning (match screenshot)
+   ========================= */
+
+/* Make sure the video area is the positioning context */
+.hero-section .synoligo-img{
+  position: relative;
+}
+
+/* Ensure the video behaves like a background */
+.hero-section video#myVideo{
+  width: 100%;
+  height: 650px;        /* you already set inline, keeping consistent */
+  object-fit: cover;
+  display: block;
+}
+
+/* Center the overlay vertically, stretch full width so the container can align right */
+.hero-section .synoligo-main-text{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none; /* keeps video interactions clean; links inside will override */
+}
+
+/* Allow clicking links inside the overlay */
+.hero-section .synoligo-main-text a,
+.hero-section .synoligo-main-text button{
+  pointer-events: auto;
+}
+
+/* Right-align the overlay box within the container */
+.hero-section .synoligo-main-text .d-xl-flex{
+  justify-content: flex-end !important;
+}
+
+/* The actual overlay box */
+.hero-section .synoligo-main-text-inner{
+  width: min(820px, 100%);
+  background: rgba(214, 245, 241, 0.92); /* light mint like screenshot */
+  padding: 44px 48px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  border-radius: 0; /* screenshot looks square */
+}
+
+/* Headline */
+.hero-section .synoligo-main-text-inner h1{
+  margin: 0 0 14px 0;
+  color: var(--syn-blue-900);
+  font-weight: 900;
+  font-size: clamp(34px, 3vw, 52px);
+  line-height: 1.05;
+}
+
+/* Your HTML has <h1><p>...</p><hr></h1> so normalize it */
+.hero-section .synoligo-main-text-inner h1 p{
+  margin: 0;
+}
+
+/* Thin divider under headline */
+.hero-section .synoligo-main-text-inner hr{
+  margin: 14px 0 18px 0;
+  border: 0;
+  height: 2px;
+  width: 120px;
+  background: rgba(8,63,111,0.35);
+}
+
+/* Text + promo image row */
+.hero-section .synoligo-main-text-inner .text-image-row{
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+/* Paragraph */
+.hero-section .synoligo-main-text-inner .text-image-row p{
+  margin: 0;
+  color: #203246;
+  font-size: 26px;
+  line-height: 1.35;
+  flex: 1 1 auto;
+}
+
+/* “Synoligo” treatment */
+.hero-section .hero-logo-text{
+  font-weight: 900;
+  color: var(--syn-blue-900);
+}
+.hero-section .hero-logo-text span{
+  color: var(--syn-green-600);
+}
+
+/* Promo image sizing */
+.hero-section .synoligo-main-text-inner .text-image-row img{
+  width: 260px;
+  max-width: 260px;
+  height: auto;
+  display: block;
+}
+
+/* Responsive (tablet/mobile) */
+@media (max-width: 991.98px){
+  .hero-section video#myVideo{
+    height: 520px;
+  }
+
+  .hero-section .synoligo-main-text{
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 14px;
+  }
+
+  .hero-section .synoligo-main-text-inner{
+    padding: 26px 22px;
+  }
+
+  .hero-section .synoligo-main-text-inner .text-image-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .hero-section .synoligo-main-text-inner .text-image-row p{
+    font-size: 20px;
+  }
+
+  .hero-section .synoligo-main-text-inner .text-image-row img{
+    width: 230px;
+    max-width: 100%;
+  }
+}
+/* =========================
+   Newsletter CTA (matches screenshot)
+   ========================= */
+.new-subscribe-section{
+  background: #fff;
+  padding: 30px 0 10px;
+}
+
+.new-subscribe-inner{
+  position: relative;
+  background: #2f5f9f;               /* deep Synoligo-ish blue */
+  color: #fff;
+  padding: 58px 70px;
+  overflow: hidden;                  /* hides triangle overflow */
+}
+
+/* angled left corner image */
+.subcribe-tringle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 210px;                      /* tune if needed */
+  height: auto;
+  pointer-events: none;
+}
+.subcribe-tringle img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography */
+.new-subscribe-inner h2{
+  margin: 0 0 10px 0;
+  font-weight: 900;
+  font-size: clamp(34px, 3.2vw, 52px);
+  line-height: 1.05;
+}
+
+.new-subscribe-inner p{
+  margin: 0;
+  font-size: 18px;
+  color: rgba(255,255,255,.92);
+}
+
+/* Button styling like screenshot (green pill) */
+.new-subscribe-inner .btn.btn-success{
+  background: #6ec15d;
+  border: 1px solid #5fb84e;
+  font-weight: 800;
+  letter-spacing: .2px;
+  padding: 14px 44px !important;     /* overrides your py-/px- */
+  box-shadow: none;
+}
+.new-subscribe-inner .btn.btn-success:hover{
+  filter: brightness(.98);
+}
+
+/* Layout tweaks so the button sits centered vertically on the right */
+.new-subscribe-inner .row{
+  min-height: 120px;
+}
+.new-subscribe-inner .col-lg-3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 991.98px){
+  .new-subscribe-inner{
+    padding: 38px 22px;
+  }
+  .subcribe-tringle{
+    display: none !important;
+  }
+  .new-subscribe-inner .col-lg-3{
+    margin-top: 18px;
+  }
+  .new-subscribe-inner p{
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   Footer (matches screenshot)
+   ========================= */
+.footer-section{
+  background: #fff;
+  border-top: 1px solid #e5e9f0;
+  padding-top: 22px;
+}
+
+.footer-section .app-logo{
+  width: 220px;           /* adjust if your logo is larger/smaller */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-section h5{
+  margin: 0;
+  font-weight: 900;
+  font-size: 22px;
+  color: #0f2235;
+}
+
+.footer-section .footer-text{
+  color: #4f6377;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.footer-section .nav.sm-link .nav-link{
+  padding: 0;
+}
+
+.footer-section a{
+  color: #1f6fb8;
+  text-decoration: none;
+}
+.footer-section a:hover{
+  text-decoration: underline;
+}
+
+/* “Book a Meeting Today” button to match pill style */
+.footer-section .footer-bx{
+  margin-top: 22px;
+}
+.footer-section .footer-bx .btn.btn-primary{
+  background: #2f5f9f;
+  border-color: #2f5f9f;
+  font-weight: 800;
+  padding: 12px 26px;
+}
+.footer-section .footer-bx .btn.btn-primary:hover{
+  filter: brightness(.98);
+}
+
+/* Column spacing similar to screenshot */
+.footer-section .row > div{
+  padding-bottom: 20px;
+}
+
+/* Copyright bar */
+.footer-section .copyright{
+  border-top: 1px solid #e5e9f0;
+  padding: 26px 12px;
+  margin-top: 18px;
+  color: #6b7c8e;
+  font-size: 15px;
 }

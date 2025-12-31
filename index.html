@@ -6,7 +6,12 @@
     <title>My Page</title>
         <link rel="stylesheet" href="style.css">
 
-  </head>
+  
+    <!-- Bootstrap (for grid/nav utilities used in this template) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (for bi-* icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    </head>
   <body>
    <div id="page" class="site">
    <!-- top-bar start here -->
@@ -28,8 +33,13 @@
         <div class="container d-flex align-items-center justify-content-between">
             <span class="tagline">Unleash the Power of Oligo Customization</span>
             <div class="auth-links d-none d-lg-flex align-items-center gap-3">
-                <a href="https://shop.synoligo.com?modal=signin" target="_blank" class="auth-link">Sign In</a>
-                <a href="https://shop.synoligo.com?modal=register" target="_blank" class="auth-link">Register</a>
+               <a href="https://shop.synoligo.com?modal=signin" target="_blank" class="auth-link">
+  <i class="bi bi-lock"></i> Sign In
+</a>
+<a href="https://shop.synoligo.com?modal=register" target="_blank" class="auth-link">
+  <i class="bi bi-person"></i> Register
+</a>
+
             </div>
         </div>
     </div>
@@ -39,7 +49,7 @@
     <nav class="navbar navbar-expand-lg bg-body-white">
       <div class="container justify-content-lg-between align-items-center">
         <a class="navbar-brand" href="https://synoligo.com">
-          <img src="/wp-content/uploads/2024/03/logo.png" alt="SynOligo Biotechnologies" class="logo xs">
+          <img src="logo.webp" alt="SynOligo Biotechnologies" class="logo xs">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,7 +133,6 @@
         padding: 1.4rem !important;
     } */
 </style>
-<div id="content" class="site-content home-page pt-md-150">
   <div id="primary" class="content-area">
 
     <!-- Hook to add something nice -->
@@ -145,8 +154,9 @@
                 <div class="container">
                    <div class="d-xl-flex justify-content-end">
                     <div class="synoligo-main-text-inner">
-                            <h1><p>Unleash the Power of Oligo Customization </p>
-</h1>
+         <h1>Unleash the Power of Oligo Customization</h1>
+<hr>
+
                             <div class="text-image-row"> 
                                 <p class="py-2"><span class="hero-logo-text">Syn<span>oligo</span></span> enables many scientific discoveries through high quality oligonucleotide synthesis. </p>
                                 <a href="https://shop.synoligo.com/products/dual-labeled-probes?tab=ordering" target="_blank"><img src="https://synoligo.com/wp-content/uploads/2025/08/discount-promo.png" alt="50% Off Your First Probe Order"></a>
@@ -942,7 +952,7 @@ One key aspect that sets Synoligo apart is the reliability of oligo synthesis se
         <div class="container px-lg-3 px-4 pt-xl-5">
             <div class="row justify-content-lg-between">
                 <div class="col-xxl-auto col-lg-3 col-lg-auto mb-lg-0 mb-4 pt-3">
-                    <img src="/wp-content/uploads/2024/03/logo.png" class="app-logo">
+                    <img src="logo.webp" class="app-logo">
 
                 </div>
                 <div class="col-xxl-auto col-lg-3 col-lg-auto ">
@@ -1045,5 +1055,9 @@ USA&ZeroWidthSpace;
 <!-- To top button -->
 <a href="#" class="btn btn-primary shadow top-button position-fixed zi-1020 back-to-top visible"><i class="fa-solid fa-chevron-up"></i><span class="visually-hidden-focusable">To top</span></a>
     </div>
-  </body>
+  
+    <!-- Bootstrap JS bundle (required for navbar toggler + offcanvas) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
 </html>
